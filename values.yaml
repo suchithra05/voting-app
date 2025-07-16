@@ -1,0 +1,24 @@
+replicaCount: 1
+
+image:
+  repository: suchithra05/voting-app
+  tag: latest
+  pullPolicy: Always
+
+service:
+  type: NodePort
+  port: 80
+  targetPort: 8080
+  nodePort: 30007
+
+configMapName: voting-app-config
+
+appConfig:
+  APP_TITLE: "Vote for Your Favorite!"
+  REDIS_HOST: redis
+
+redis:
+  enabled: true
+  image: redis:7.2
+  port: 6379
+  storage: 1Gi

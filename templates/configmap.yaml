@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.configMapName }}
+data:
+  APP_TITLE: "{{ .Values.appConfig.APP_TITLE }}"
+  REDIS_HOST: "{{ .Values.appConfig.REDIS_HOST }}"
